@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;PayPerSecond – Real-Time Earnings Simulator&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--primary: #2563eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--primary-dark: #1d4ed8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--success: #10b981;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--danger: #ef4444;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-100: #f3f4f6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-700: #374151;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gray-900: #111827;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--font-mono: 'SF Mono', Menlo, Monaco, Consolas, "Courier New", monospace;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #e5e7eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(30, 41, 59, 0.95);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(12px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 420px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(148, 163, 184, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(to right, #60a5fa, #c084fc);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.input-group {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #94a3b8;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>input {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.75rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-mono);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #475569;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.rate-options {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.rate-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #475569;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.rate-btn.active {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.clock-toggle {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.125rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.clock-toggle.off {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--danger);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.clock-toggle.on {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--success);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: pulse 2s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes pulse {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0%, 100% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>50% { opacity: 0.9; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.action-buttons {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.reset-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #334155;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #475569;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.reset-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.earnings-display {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #0f172a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px dashed #475569;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.earnings-label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #94a3b8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.05em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.earnings-amount {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: var(--font-mono);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #34d399;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.02em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.stats {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #94a3b8;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #64748b;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-color-scheme: light) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: rgba(248, 250, 252, 0.95);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input, .rate-btn, .reset-btn {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: #f1f5f9;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-color: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.reset-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.earnings-display {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-color: #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.earnings-amount {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: #059669;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;PayPerSecond&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label for="rate-input"&gt;Enter Your Rate&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>type="number"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>id="rate-input"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>placeholder="e.g., 25 or 300"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>step="0.01"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>min="0"</p>
+<p class="p1"><span class="Apple-converted-space">      </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="rate-options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="rate-btn active" data-type="hourly"&gt;Hourly Rate ($/hr)&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="rate-btn" data-type="daily"&gt;12-Hour Day ($/day)&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="clock-toggle" class="clock-toggle off"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Start Earning</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="action-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="reset-btn" class="reset-btn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Reset Counter</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="earnings-display"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="earnings-label"&gt;Total Earned&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="earnings-amount" id="earnings"&gt;$0.00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;Session: &lt;span id="session-time"&gt;00:00:00&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;Rate: &lt;span id="rate-display"&gt;$0.00/sec&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Real-time earnings simulator • Built with ❤️ by an elite engineer</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// === Elite-Level State Management &amp; Real-Time Precision ===</p>
+<p class="p1"><span class="Apple-converted-space">    </span>class PayPerSecond {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>constructor() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state = {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>isRunning: false,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rateType: 'hourly', // 'hourly' | 'daily'</p>
+<p class="p1"><span class="Apple-converted-space">          </span>inputRate: 0, <span class="Apple-converted-space">      </span>// raw input (hourly or daily)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>perSecond: 0, <span class="Apple-converted-space">      </span>// computed $/sec</p>
+<p class="p1"><span class="Apple-converted-space">          </span>accumulated: 0, <span class="Apple-converted-space">    </span>// total earned in session</p>
+<p class="p1"><span class="Apple-converted-space">          </span>startTime: null,<span class="Apple-converted-space">    </span>// timestamp when clock started</p>
+<p class="p1"><span class="Apple-converted-space">          </span>elapsedMs: 0, <span class="Apple-converted-space">      </span>// total elapsed on-clock milliseconds</p>
+<p class="p1"><span class="Apple-converted-space">          </span>lastFrame: null,<span class="Apple-converted-space">    </span>// requestAnimationFrame timestamp</p>
+<p class="p1"><span class="Apple-converted-space">          </span>sessionStart: null<span class="Apple-converted-space">  </span>// for session timer</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements = this.cacheDOM();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.bindEvents();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.loadPersistedState();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>cacheDOM() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>input: document.getElementById('rate-input'),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rateBtns: document.querySelectorAll('.rate-btn'),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>toggle: document.getElementById('clock-toggle'),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>resetBtn: document.getElementById('reset-btn'),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>earnings: document.getElementById('earnings'),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>sessionTime: document.getElementById('session-time'),</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rateDisplay: document.getElementById('rate-display')</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>bindEvents() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.input.addEventListener('input', () =&gt; this.updateRate());</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.rateBtns.forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.addEventListener('click', () =&gt; this.setRateType(btn.dataset.type));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.addEventListener('click', () =&gt; this.toggleClock());</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.resetBtn.addEventListener('click', () =&gt; this.resetCounter());</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// === Persistence via localStorage (survives refresh) ===</p>
+<p class="p1"><span class="Apple-converted-space">      </span>loadPersistedState() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const saved = localStorage.getItem('payPerSecond');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (saved) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const data = JSON.parse(saved);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.state.accumulated = data.accumulated || 0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.state.elapsedMs = data.elapsedMs || 0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.state.inputRate = data.inputRate || 0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.state.rateType = data.rateType || 'hourly';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.elements.input.value = this.state.inputRate;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.updateRateDisplay();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.updateEarnings();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.updateSessionTime();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.highlightActiveRateBtn();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>saveState() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const toSave = {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>accumulated: this.state.accumulated,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>elapsedMs: this.state.elapsedMs,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>inputRate: this.state.inputRate,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rateType: this.state.rateType</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('payPerSecond', JSON.stringify(toSave));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// === Rate Logic ===</p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateRate() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const val = parseFloat(this.elements.input.value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.inputRate = val;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.computePerSecond();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.updateRateDisplay();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.saveState();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>setRateType(type) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.rateType = type;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.computePerSecond();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.updateRateDisplay();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.highlightActiveRateBtn();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.saveState();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>highlightActiveRateBtn() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.rateBtns.forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>btn.classList.toggle('active', btn.dataset.type === this.state.rateType);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>computePerSecond() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (this.state.rateType === 'hourly') {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.state.perSecond = this.state.inputRate / 3600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.state.perSecond = this.state.inputRate / (12 * 3600);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateRateDisplay() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fmt = this.state.perSecond.toFixed(6).replace(/0+$/, '').replace(/\.$/, '');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.rateDisplay.textContent = `$${fmt}/sec`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// === Clock Control ===</p>
+<p class="p1"><span class="Apple-converted-space">      </span>toggleClock() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (this.state.isRunning) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.stop();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.start();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>start() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (this.state.perSecond === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alert('Please enter a valid rate first!');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.isRunning = true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.lastFrame = performance.now();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.startTime = this.state.lastFrame;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.sessionStart = this.state.sessionStart || Date.now();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.textContent = 'Stop Earning';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.classList.remove('off');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.classList.add('on');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.animationFrame = requestAnimationFrame(this.tick);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>stop() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.isRunning = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (this.animationFrame) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cancelAnimationFrame(this.animationFrame);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.textContent = 'Start Earning';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.classList.remove('on');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.toggle.classList.add('off');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.saveState();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// === Reset Counter ===</p>
+<p class="p1"><span class="Apple-converted-space">      </span>resetCounter() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (this.state.isRunning) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!confirm('Clock is running. Reset will stop it and clear earnings. Continue?')) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.stop();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.accumulated = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.elapsedMs = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.sessionStart = null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.updateEarnings();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.updateSessionTime();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.saveState();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// === Real-Time Tick with requestAnimationFrame (60fps precision) ===</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tick = (now) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!this.state.isRunning) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const deltaMs = this.state.lastFrame ? (now - this.state.lastFrame) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.lastFrame = now;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Accumulate earnings</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const earnedThisFrame = this.state.perSecond * (deltaMs / 1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.accumulated += earnedThisFrame;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.state.elapsedMs += deltaMs;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.updateEarnings();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.updateSessionTime();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.saveState();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.animationFrame = requestAnimationFrame(this.tick);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// === UI Updates ===</p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateEarnings() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.earnings.textContent = `$${this.state.accumulated.toFixed(2)}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateSessionTime() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const totalSec = Math.floor(this.state.elapsedMs / 1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const h = String(Math.floor(totalSec / 3600)).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const m = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const s = String(totalSec % 60).padStart(2, '0');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>this.elements.sessionTime.textContent = `${h}:${m}:${s}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// === Initialize App ===</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.app = new PayPerSecond();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
